@@ -1,6 +1,6 @@
 /* @flow */
 
-import { warn } from 'core/util/index'
+import { catWarn } from 'core/util/index'
 
 export * from './attrs'
 export * from './class'
@@ -13,7 +13,7 @@ export function query (el: string | Element): Element {
   if (typeof el === 'string') {
     const selected = document.querySelector(el)
     if (!selected) {
-      process.env.NODE_ENV !== 'production' && warn(
+      process.env.NODE_ENV !== 'production' && catWarn(
         'Cannot find element: ' + el
       )
       return document.createElement('div')

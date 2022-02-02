@@ -1,7 +1,7 @@
 /* @flow */
 
 import config from 'core/config'
-import { warn, cached } from 'core/util/index'
+import { warn, cached, catWarn } from 'core/util/index'
 import { mark, measure } from 'core/util/perf'
 
 import Vue from './runtime/index'
@@ -23,7 +23,7 @@ Vue.prototype.$mount = function (
 
   /* istanbul ignore if */
   if (el === document.body || el === document.documentElement) {
-    process.env.NODE_ENV !== 'production' && warn(
+    process.env.NODE_ENV !== 'production' && catWarn(
       `Do not mount Vue to <html> or <body> - mount to normal elements instead.`
     )
     return this

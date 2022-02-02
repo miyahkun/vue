@@ -1,0 +1,5 @@
+{
+  "flow.useLSP": false,
+  "javascript.validate.enable": false,
+  "vetur.format.enable": false
+}
